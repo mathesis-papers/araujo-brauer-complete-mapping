@@ -5,13 +5,15 @@
 We give a rank-ideal consequence and a rankwise proof of Horace Dong's September 2026 solution (Theorem 1.1; version 2, October 2026) to Araújo, Bentz, Cameron, Hendrey and Kinyon's Complete Mappings of Semigroups, arXiv:2608.25092v1, Section 15, Problem 15.11, printed page 61: the Brauer and partial Brauer monoids of positive degree n admit complete mappings exactly when n=1 or n>=4. Every proper Brauer principal factor admits one; the sole partial Brauer exception is the rank-two factor of PB_3, as Dong also proved. We derive the exact existence criterion for every nonempty rank ideal, including degrees two and three. The proof uses adjacent-subset pairings, signed sandwich transversals and rank preservation. Existence does not enumerate individual complete mappings.
 
 - PDF: [frozen public file](paper.pdf)
+- DOI: [https://doi.org/10.5281/zenodo.24369100](https://doi.org/10.5281/zenodo.24369100)
+- Concept DOI: [https://doi.org/10.5281/zenodo.24369099](https://doi.org/10.5281/zenodo.24369099)
 - License: CC-BY-4.0
 - Version: 2
 - Mathesis record: [araujo-brauer-complete-mapping](https://mathesis-omega-research.apps.chrono-ai.fun/papers/araujo-brauer-complete-mapping?version=2)
 
 ## How to cite
 
-Haobo Ma, Wenlin Zhang (2026). Rank-ideal consequences of Dong's solution to the Brauer complete-mapping problem of Araújo, Bentz, Cameron, Hendrey and Kinyon. Mathesis, version 2. https://mathesis-omega-research.apps.chrono-ai.fun/papers/araujo-brauer-complete-mapping?version=2
+Haobo Ma, Wenlin Zhang (2026). Rank-ideal consequences of Dong's solution to the Brauer complete-mapping problem of Araújo, Bentz, Cameron, Hendrey and Kinyon. Mathesis, version 2. https://doi.org/10.5281/zenodo.24369100
 
 ## Statement progress
 
