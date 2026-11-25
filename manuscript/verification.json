@@ -1,0 +1,299 @@
+{
+  "arithmetic": "exact Python integers and permutations",
+  "binomial_parity_degrees": {
+    "maximum": 40,
+    "minimum": 4
+  },
+  "diagram_counts": [
+    {
+      "brauer_diagrams": 1,
+      "degree": 1,
+      "partial_brauer_diagrams": 2
+    },
+    {
+      "brauer_diagrams": 3,
+      "degree": 2,
+      "partial_brauer_diagrams": 10
+    },
+    {
+      "brauer_diagrams": 15,
+      "degree": 3,
+      "partial_brauer_diagrams": 76
+    },
+    {
+      "brauer_diagrams": 105,
+      "degree": 4,
+      "partial_brauer_diagrams": 764
+    }
+  ],
+  "factor_bijections": [
+    {
+      "degree": 4,
+      "elements": 72,
+      "exterior_connectivity_products_checked": 72,
+      "half_diagrams": 6,
+      "multiplier_and_product_bijections": true,
+      "partial": false,
+      "rank": 2
+    },
+    {
+      "degree": 5,
+      "elements": 600,
+      "exterior_connectivity_products_checked": 600,
+      "half_diagrams": 10,
+      "multiplier_and_product_bijections": true,
+      "partial": false,
+      "rank": 3
+    },
+    {
+      "degree": 6,
+      "elements": 4050,
+      "exterior_connectivity_products_checked": 4050,
+      "half_diagrams": 45,
+      "multiplier_and_product_bijections": true,
+      "partial": false,
+      "rank": 2
+    },
+    {
+      "degree": 7,
+      "elements": 66150,
+      "exterior_connectivity_products_checked": 66150,
+      "half_diagrams": 105,
+      "multiplier_and_product_bijections": true,
+      "partial": false,
+      "rank": 3
+    },
+    {
+      "degree": 4,
+      "elements": 288,
+      "exterior_connectivity_products_checked": 288,
+      "half_diagrams": 12,
+      "multiplier_and_product_bijections": true,
+      "partial": true,
+      "rank": 2
+    },
+    {
+      "degree": 4,
+      "elements": 96,
+      "exterior_connectivity_products_checked": 96,
+      "half_diagrams": 4,
+      "multiplier_and_product_bijections": true,
+      "partial": true,
+      "rank": 3
+    },
+    {
+      "degree": 5,
+      "elements": 3200,
+      "exterior_connectivity_products_checked": 3200,
+      "half_diagrams": 40,
+      "multiplier_and_product_bijections": true,
+      "partial": true,
+      "rank": 2
+    },
+    {
+      "degree": 5,
+      "elements": 2400,
+      "exterior_connectivity_products_checked": 2400,
+      "half_diagrams": 20,
+      "multiplier_and_product_bijections": true,
+      "partial": true,
+      "rank": 3
+    }
+  ],
+  "identity_sandwich_families": [
+    {
+      "complete_mapping_exists": false,
+      "index_size": 1,
+      "negative_sign_elements": 1,
+      "nonzero_elements": 2,
+      "rank": 2
+    },
+    {
+      "complete_mapping_exists": true,
+      "index_size": 2,
+      "negative_sign_elements": 4,
+      "nonzero_elements": 8,
+      "rank": 2
+    },
+    {
+      "complete_mapping_exists": false,
+      "index_size": 3,
+      "negative_sign_elements": 9,
+      "nonzero_elements": 18,
+      "rank": 2
+    },
+    {
+      "complete_mapping_exists": true,
+      "index_size": 4,
+      "negative_sign_elements": 16,
+      "nonzero_elements": 32,
+      "rank": 2
+    },
+    {
+      "complete_mapping_exists": false,
+      "index_size": 1,
+      "negative_sign_elements": 3,
+      "nonzero_elements": 6,
+      "rank": 3
+    },
+    {
+      "complete_mapping_exists": true,
+      "index_size": 2,
+      "negative_sign_elements": 12,
+      "nonzero_elements": 24,
+      "rank": 3
+    },
+    {
+      "complete_mapping_exists": false,
+      "index_size": 3,
+      "negative_sign_elements": 27,
+      "nonzero_elements": 54,
+      "rank": 3
+    },
+    {
+      "complete_mapping_exists": true,
+      "index_size": 4,
+      "negative_sign_elements": 48,
+      "nonzero_elements": 96,
+      "rank": 3
+    }
+  ],
+  "rectangular_band_enumeration": {
+    "all_permutations_tested": 24,
+    "complete_mappings": 16,
+    "half_diagrams": 2,
+    "parametrization_matches": true
+  },
+  "result": "ALL_CHECKS_OK",
+  "scope": "Finite instances of the constructions in the written proof.",
+  "small_degree_boundaries": {
+    "partial_brauer_three_rank_two": {
+      "diagonal_sandwich_only": true,
+      "exterior_products_checked": 324,
+      "negative_sign_elements": 9,
+      "nonzero_elements": 18
+    },
+    "trivial_group_factors": [
+      {
+        "bijections_and_direct_products": true,
+        "degree": 1,
+        "elements": 1,
+        "partial": false,
+        "rank": 1
+      },
+      {
+        "bijections_and_direct_products": true,
+        "degree": 1,
+        "elements": 1,
+        "partial": true,
+        "rank": 0
+      },
+      {
+        "bijections_and_direct_products": true,
+        "degree": 1,
+        "elements": 1,
+        "partial": true,
+        "rank": 1
+      },
+      {
+        "bijections_and_direct_products": true,
+        "degree": 2,
+        "elements": 1,
+        "partial": false,
+        "rank": 0
+      },
+      {
+        "bijections_and_direct_products": true,
+        "degree": 2,
+        "elements": 4,
+        "partial": true,
+        "rank": 0
+      },
+      {
+        "bijections_and_direct_products": true,
+        "degree": 2,
+        "elements": 4,
+        "partial": true,
+        "rank": 1
+      },
+      {
+        "bijections_and_direct_products": true,
+        "degree": 3,
+        "elements": 9,
+        "partial": false,
+        "rank": 1
+      },
+      {
+        "bijections_and_direct_products": true,
+        "degree": 3,
+        "elements": 16,
+        "partial": true,
+        "rank": 0
+      },
+      {
+        "bijections_and_direct_products": true,
+        "degree": 3,
+        "elements": 36,
+        "partial": true,
+        "rank": 1
+      }
+    ],
+    "unit_obstructions": [
+      {
+        "degree": 2,
+        "negative_sign_elements": 1
+      },
+      {
+        "degree": 3,
+        "negative_sign_elements": 3
+      }
+    ]
+  },
+  "subset_pairing_checks": [
+    {
+      "degree": 6,
+      "rank": 2,
+      "subsets": 15
+    },
+    {
+      "degree": 10,
+      "rank": 2,
+      "subsets": 45
+    },
+    {
+      "degree": 14,
+      "rank": 2,
+      "subsets": 91
+    },
+    {
+      "degree": 18,
+      "rank": 2,
+      "subsets": 153
+    },
+    {
+      "degree": 7,
+      "rank": 3,
+      "subsets": 35
+    },
+    {
+      "degree": 11,
+      "rank": 3,
+      "subsets": 165
+    },
+    {
+      "degree": 15,
+      "rank": 3,
+      "subsets": 455
+    },
+    {
+      "degree": 19,
+      "rank": 3,
+      "subsets": 969
+    }
+  ],
+  "symmetric_group_three_fibre_cases": 72,
+  "telephone_count_parity": {
+    "maximum": 40,
+    "minimum": 2
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 97844,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "e05717f2c5812639912aca1a86c6033dc33354242acd2177be00d4ea79c455ce",
+      "sha256": "e05717f2c5812639912aca1a86c6033dc33354242acd2177be00d4ea79c455ce"
+    },
+    "source": {
+      "bytes": 21239,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "2db06303c790283befde4a0ebc2b43435c341149a6b2375f287a5262dab9214f",
+      "sha256": "2db06303c790283befde4a0ebc2b43435c341149a6b2375f287a5262dab9214f"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "We give a rank-ideal consequence and a rankwise proof of Horace Dong's September 2026 solution (Theorem 1.1; version 2, October 2026) to Araújo, Bentz, Cameron, Hendrey and Kinyon's Complete Mappings of Semigroups, arXiv:2608.25092v1, Section 15, Problem 15.11, printed page 61: the Brauer and partial Brauer monoids of positive degree n admit complete mappings exactly when n=1 or n>=4. Every proper Brauer principal factor admits one; the sole partial Brauer exception is the rank-two factor of PB_3, as Dong also proved. We derive the exact existence criterion for every nonempty rank ideal, including degrees two and three. The proof uses adjacent-subset pairings, signed sandwich transversals and rank preservation. Existence does not enumerate individual complete mappings.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "a89e0fb9ba0f9002502ec8125455c2c2a9281443",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/a89e0fb9ba0f9002502ec8125455c2c2a9281443/D5/S3/Combinatorics/PerfectMatchings/AraujoBrauerCompleteMapping.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 97844,
+      "sha256": "e05717f2c5812639912aca1a86c6033dc33354242acd2177be00d4ea79c455ce",
+      "url": "/api/v1/collected-papers/araujo-brauer-complete-mapping/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-25T19:59:38.624066902Z",
+    "record": "araujo-brauer-complete-mapping",
+    "repository_name": "araujo-brauer-complete-mapping",
+    "source": {
+      "bytes": 21239,
+      "sha256": "2db06303c790283befde4a0ebc2b43435c341149a6b2375f287a5262dab9214f",
+      "url": "/api/v1/collected-papers/araujo-brauer-complete-mapping/files/source?version=2"
+    },
+    "title": "Rank-ideal consequences of Dong's solution to the Brauer complete-mapping problem of Araújo, Bentz, Cameron, Hendrey and Kinyon",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-25T19:59:38.624066902Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "araujo-brauer-complete-mapping"
+  }
+}

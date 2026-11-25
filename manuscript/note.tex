@@ -1,0 +1,288 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,longtable,array}
+\usepackage[margin=26mm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,breaklinks=true]{hyperref}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\B}{\mathcal B}
+\newcommand{\PB}{\mathcal{PB}}
+\newcommand{\Sym}{\mathfrak S}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\LeanBase}{https://github.com/the-omega-institute/trureturing/blob/a89e0fb9ba0f9002502ec8125455c2c2a9281443/D5/S3/Combinatorics/PerfectMatchings/}
+\newcommand{\leanfile}[2]{\href{\LeanBase#1.lean}{#2}}
+\setlength{\emergencystretch}{2em}
+\title{Rank-ideal consequences of Dong's solution to the Brauer complete-mapping problem of Ara\'ujo, Bentz, Cameron, Hendrey and Kinyon}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{17 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give a rank-ideal consequence and a rankwise proof of Horace Dong's September 2026 solution~\cite[Theorem~1.1; version~2, October 2026]{Dong} to Ara\'ujo, Bentz, Cameron, Hendrey and Kinyon's \emph{Complete Mappings of Semigroups}, arXiv:2608.25092v1, Section~15, Problem~15.11, printed page~61: the Brauer and partial Brauer monoids of positive degree $n$ admit complete mappings exactly when $n=1$ or $n\ge4$.
+Every proper Brauer principal factor admits one; the sole partial Brauer exception is the rank-two factor of $\PB_3$, as Dong also proved. We derive the exact existence criterion for every nonempty rank ideal, including degrees two and three. The proof uses adjacent-subset pairings, signed sandwich transversals and rank preservation. Existence does not enumerate individual complete mappings.
+\end{abstract}
+\begingroup\small
+\noindent Licensed under \href{https://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution 4.0 International (CC BY 4.0)}.
+\endgroup
+
+\section{Statement and reduction to rank factors}
+A complete mapping of a finite semigroup $S$ is a permutation $\alpha$ such that $x\mapsto x\alpha(x)$ is also a permutation. Thus it is a transversal of the multiplication table. An element of $\B_n$ is a partition of two $n$-point rows into pairs; in $\PB_n$ singleton blocks are also allowed. Multiplication identifies the lower row of the first diagram with the upper row of the second, and retains connectivity on the two exterior rows. A \emph{through block} meets both exterior rows, and the \emph{rank} is the number of through blocks. These are the conventions of East, Mitchell, Ru\v skuc and Torpey~\cite[Sections~2.1--2.2]{EMRT}.
+
+\begin{theorem}\label{thm:main}
+For every integer $n\ge1$ the following statements hold.
+\begin{enumerate}
+\item Each of $\B_n$ and $\PB_n$ has a complete mapping if and only if $n=1$ or $n\ge4$.
+\item Every proper principal factor of $\B_n$ has a complete mapping. The same is true for $\PB_n$ except for its rank-two factor when $n=3$.
+\item Let $0\le q\le n$ and let $I_q(D)=\{x\in D:\operatorname{rank}(x)\le q\}$ be nonempty. Then $I_q(\B_n)$ has a complete mapping exactly when $n\notin\{2,3\}$ or $q<n$. The ideal $I_q(\PB_n)$ has one exactly when $n\notin\{2,3\}$ or $q\le1$.
+\end{enumerate}
+The first two assertions are Dong's theorem~\cite[Theorem~1.1]{Dong}; the third is its rankwise consequence. In every affirmative case there is a transversal in each included rank class whose products retain that rank.
+\end{theorem}
+
+Ara\'ujo et al.~\cite[Theorems~4.4 and~6.2; Corollary~7.6]{ABCHK} reduce existence to principal factors and handle the even-index cases; their Theorem~8.5 settles the partition monoid. Dong~\cite[Sections~4--7]{Dong} settles the Brauer cases using a signed triangle and paired half diagrams. We retain that signed-cycle mechanism, but pair adjacent through sets by adding four vertices at a time rather than selecting one compatible representative from each pair of fibres. The resulting proof makes the rank-ideal consequence explicit. It is an alternative exposition of the existence theorem, not a new settlement of the source question.
+
+A rank-$r$ diagram is uniquely described by $(H,g,K)$: its upper half diagram $H$, its lower half diagram $K$, and a bijection $g\in\Sym_r$ between the through vertices in increasing order. A Brauer half diagram consists of an $r$-subset $T$ of $\{0,\ldots,n-1\}$ and a perfect matching of its complement. A partial Brauer half diagram allows unmatched complement vertices. Let $I$ be the corresponding finite set of half diagrams.
+
+Superimposing $K$ and $L$ in the middle row either connects each through vertex of $K$ to exactly one through vertex of $L$, or loses rank. In the first case write $p_{K,L}\in\Sym_r$ for that transport; in the second write $p_{K,L}=0$. The rank-preserving product is
+\begin{equation}\label{eq:rees}
+ (H,g,K)(L,h,M)=(H,gp_{K,L}h,M).
+\end{equation}
+Permutations act on the right, so products are read from left to right. In particular $p_{H,H}=1$. These coordinates are the concrete Rees coordinates for the rank principal factor; their agreement with the diagram product follows by tracing each exterior-to-exterior path. The rank classes and maximal subgroups are described in~\cite[Proposition~2.1 and Remark~2.2(v)--(vii)]{EMRT}.
+
+Adjoining a zero for rank-losing products gives the principal factor. A transversal of its nonzero part extends by fixing zero. Conversely a complete mapping fixes a zero: if $\alpha(x)=0$, then $x\alpha(x)=0=0\alpha(0)$, so product injectivity forces $x=0$. Thus it suffices to construct permutations of $I\times\Sym_r\times I$ satisfying~\eqref{eq:rees}. Taking their union over disjoint rank classes gives a complete mapping of the monoid, or of any rank ideal.
+
+\begin{lemma}[Rank filtration]\label{lem:filtration}
+Let $S$ be a finite semigroup and let $\ell:S\to\mathbb Z$ satisfy $\ell(xy)\le\min(\ell(x),\ell(y))$. If $\alpha$ is complete and $\theta(x)=x\alpha(x)$, both $\alpha$ and $\theta$ preserve every level of $\ell$. This is the sublevel-set form of~\cite[Proposition~3.1]{ABCHK}.
+\end{lemma}
+\begin{proof}
+For $J_t=\{x:\ell(x)\le t\}$, the inequality gives $\theta(J_t)\subseteq J_t$. Finiteness and injectivity give equality. If $\alpha(x)\in J_t$, then $\theta(x)\in J_t$, hence $x\in J_t$. Thus $\alpha^{-1}(J_t)\subseteq J_t$; equal cardinalities give equality. Both permutations preserve every sublevel set and therefore every level. Diagram rank satisfies the inequality by following through blocks, so this applies equally to a whole diagram monoid and to any of its rank ideals.
+\end{proof}
+
+\section{Explicit sandwich transversals}\label{sec:transversals}
+In this section $P=(p_{d,e})$ is a square sandwich matrix indexed by a nonempty finite set $I$, with diagonal entries~$1$. A transversal means that both the chosen multiplier and the resulting product permute all nonzero triples. Unused sandwich entries are irrelevant.
+
+\begin{lemma}\label{lem:good-even}
+If $G$ has a complete mapping, then $P$ over $G\cup\{0\}$ has a transversal. If $|I|$ is even, the same holds for $G=C_2$ and $G=\Sym_3$.
+\end{lemma}
+\begin{proof}
+Label $I$ by $\Z/m\Z$. If $\beta$ is a complete mapping of $G$, choose
+\[
+ \alpha(i,g,d)=(d,\beta(g),i+d),\qquad
+ \theta(i,g,d)=(i,g\beta(g),i+d).
+\]
+Both maps are bijective, and the sandwich entry used is $p_{d,d}=1$.
+
+For $G=C_2$, use additive notation. If $m=2k$, label $I$ by $C_2\times\Z/k\Z$. For $i=(a,b)$ and $d=(c,e)$, set
+\begin{align*}
+ \alpha((a,b),g,(c,e))&=((c,e),a+c,(a+g,b+e)),\\
+ \theta((a,b),g,(c,e))&=((a,b),g+a+c,(a+g,b+e)).
+\end{align*}
+The first coordinates $a,c,g$ are modulo two. For a specified multiplier, $d$, its group coordinate, and its last coordinate recover $a,g,b$ uniquely. For a specified product and fixed first index $(a,b)$, its last index $(u,v)$ and group coordinate $q$ recover $g=u-a$, $c=q-u$, and $e=v-b$. These are bijections and $\theta(x)=x\alpha(x)$.
+
+The $\Sym_3$ case follows from the lifting argument in Lemma~\ref{lem:lift} below, applied to the sign quotient.
+\end{proof}
+
+\begin{lemma}[Signed-cycle transversal; Dong~\cite{Dong}, Lemma~4.4]\label{lem:signed}
+Suppose $P$ has entries in $\{0,+1,-1\}$, with diagonal~$1$. Let $\rho$ permute $I$ with $p_{d,\rho d}=w_d\ne0$. If on every cycle $C$ of $\rho$,
+\begin{equation}\label{eq:cycle}
+ \prod_{d\in C}w_d=(-1)^{|C|},
+\end{equation}
+then $P$ has a transversal over $\{+1,-1\}$.
+\end{lemma}
+\begin{proof}
+Choose $c_d\in\{+1,-1\}$ satisfying $c_{\rho d}=-w_dc_d$. Choose one sign per cycle and propagate; \eqref{eq:cycle} is precisely the consistency condition. Label $I$ by $\Z/m\Z$ and define three bijections on $(I\times I)\times\{+1,-1\}$:
+\begin{align*}
+ R(i,d,t)&=(i,c_dt,d),\\
+ C(i,d,t)&=(d,-c_dt,i+d),\\
+ T(i,d,t)&=(i,-t,i+d).
+\end{align*}
+Let $F(i,d,+1)=(i,d,+1)$ and $F(i,d,-1)=(i,\rho d,-1)$. It too is bijective. Set $\alpha=CFR^{-1}$ and $\theta=TFR^{-1}$, where this notation denotes functional composition, with the rightmost map applied first. For $t=+1$,
+\[
+ R(i,d,+1)\,C(F(i,d,+1))=(i,-1,i+d)=T(F(i,d,+1)).
+\]
+For $t=-1$ the middle coordinate of the product is
+\[
+ (-c_d)w_dc_{\rho d}=1,
+\]
+and its last index is $i+\rho d$, again giving $T(F(i,d,-1))$. Hence $x\alpha(x)=\theta(x)$, and both required maps are bijective.
+\end{proof}
+
+\begin{lemma}[Lifting the sign quotient]\label{lem:lift}
+A transversal for the sign quotient of a sandwich matrix over $\Sym_3\cup\{0\}$ lifts to a transversal for the original matrix.
+\end{lemma}
+\begin{proof}
+Let $s(+1)=1$ and $s(-1)=(0\ 1)$. Suppose a quotient row with group sign $q$ chooses a multiplier with sign $v$, through a nonzero sandwich entry $p$. Every permutation in the input sign fibre has the unique form $g=a s(q)$, where $a\in A_3$. Choose its multiplier group coordinate to be
+\[
+ h=p^{-1}s(q)^{-1}a\,s(q\sgn(p)v).
+\]
+It has sign $v$, and $gph=a^2s(q\sgn(p)v)$. As $a$ varies in the cyclic group $A_3$ of order three, both $h$ and $gph$ range bijectively over their prescribed sign fibres: multiplication and $a\mapsto a^2$ are bijections there. The quotient multiplier and product already permute the quotient triples, so these fibrewise bijections give the desired full transversal. This is the explicit $A_3$ instance of~\cite[Lemma~6.3]{ABCHK}.
+\end{proof}
+
+\section{A supported triangle of half diagrams}\label{sec:triangles}
+\begin{lemma}\label{lem:overlay}
+Two Brauer half diagrams whose through sets are equal, or differ by one vertex, have nonzero transport. Equal through sets give identity transport; reversing a transport gives its inverse. If three through sets are
+\[
+ S\cup\{a,b\},\quad S\cup\{a,c\},\quad S\cup\{b,c\},
+\]
+where $a,b,c$ are distinct and outside $S$, the product of the signs of their three cyclic transports is $-1$.
+\end{lemma}
+\begin{proof}
+Regard the two perfect complement matchings as differently coloured edges, retaining parallel edges. A vertex through in both halves is isolated and transports to itself. Every other vertex has degree two, except a vertex through in exactly one half, which has degree one. If the through sets differ by one vertex there are exactly two such endpoints. In this finite multigraph the component starting at either endpoint is a path to the other; all other non-isolated components are cycles. This proves the transport assertion, independently of the chosen complement matchings. Reversing the same paths inverts the transport.
+
+For the displayed triangle, the transports fix $S$. On the other labels they are: $a\mapsto a$, $b\mapsto c$ in the first step; $a\mapsto b$, $c\mapsto c$ in the second; $b\mapsto b$, $c\mapsto a$ in the third. Their composition swaps $a,b$ and fixes $S$, hence has sign $-1$. Computing signs in the increasing labels changes no cyclic product, since the intermediate relabellings cancel.
+\end{proof}
+
+\begin{lemma}\label{lem:subset}
+For $(n,r)=(6+4k,2)$ or $(7+4k,3)$, $k\ge0$, the $r$-subsets of $\{0,\ldots,n-1\}$ can be paired with adjacent subsets, leaving exactly three unpaired sets of the form in Lemma~\ref{lem:overlay}. Here adjacent means intersection size $r-1$.
+\end{lemma}
+\begin{proof}
+Write $013$ for $\{0,1,3\}$, and similarly for other subsets. At $(6,2)$ leave $01,02,12$ unpaired and use the six pairs
+\[
+ (13,03),\ (23,24),\ (04,05),\ (34,14),\ (35,15),\ (45,25).
+\]
+At $(7,3)$ leave $013,023,123$ unpaired and use
+\[
+\begin{array}{llll}
+(012,014)&(034,024)&(124,125)&(134,135)\\
+(234,235)&(245,025)&(345,035)&(015,016)\\
+(045,046)&(145,146)&(156,056)&(456,246)\\
+(256,026)&(126,136)&(346,036)&(356,236).
+\end{array}
+\]
+Every indicated pair is adjacent; these lists contain every subset except the three specified sets exactly once.
+
+To add four new vertices, keep the old pairing on subsets with no new vertex. For any other $r$-subset, keep its old part fixed and pair its nonempty new part using the following list on four locally labelled vertices:
+\[
+ (0,1),\ (2,3),\ (01,02),\ (03,13),\ (12,23),\
+ (012,013),\ (023,123).
+\]
+The new part has size one, two or three, so the list covers every possibility, preserves its size, and changes exactly one vertex. This extends the pairing without adding unpaired sets. Induction proves the claim; the rank-three triangle has $S=\{3\}$ and $\{a,b,c\}=\{0,1,2\}$.
+\end{proof}
+
+\begin{lemma}\label{lem:half}
+For the two families in Lemma~\ref{lem:subset}, the set of Brauer half diagrams has a permutation with one three-cycle and all other cycles of length two, such that all cyclic transports exist, the sign product on each two-cycle is $+1$, and that on the three-cycle is $-1$.
+\end{lemma}
+\begin{proof}
+Each through set has an odd number $f=(n-r-1)!!$ of complement matchings, with the empty matching counted as one. Arbitrarily label each of these equal-sized fibres by one common $f$-element set. Over a paired pair of through sets, pair equal fibre labels. Over each of the three unpaired through sets, pair all fibre labels except one; join the three remaining half diagrams into a three-cycle. This covers every half diagram exactly once. Each resulting pair has equal or adjacent through sets. Lemma~\ref{lem:overlay} gives all transports, inverse transports on the two-cycles, and the negative sign on the triangle.
+\end{proof}
+
+\section{Completion of the classification}
+The number of Brauer half diagrams of rank $r$ is
+\begin{equation}\label{eq:counts}
+ b_{n,r}=\binom nr(n-r-1)!!\qquad(n-r\text{ even},\ 0\le r\le n).
+\end{equation}
+Here $(-1)!!=1$. The count is obtained by choosing through vertices and then successively pairing the least remaining vertex. All factors of the double factorial are odd. Therefore, for the exceptional ranks and $n\ge4$,
+\[
+ b_{n,2}\text{ odd}\ \Longleftrightarrow\ n=6+4k,
+ \qquad
+ b_{n,3}\text{ odd}\ \Longleftrightarrow\ n=7+4k
+ \quad(k\ge0),
+\]
+where the first rank occurs only for even $n$, the second only for odd $n$. Indeed $\binom n2$ has parity $n/2$ for even $n$, while for odd $n$, $\binom n3$ has parity $(n-1)/2$ (division by the odd integer three does not change parity).
+
+For partial half diagrams the corresponding number is
+\[
+ p_{n,r}=\binom nr t_{n-r},\qquad
+ t_0=t_1=1,\quad t_j=t_{j-1}+(j-1)t_{j-2}\ (j\ge2).
+\]
+The recurrence distinguishes a singleton from a partner of a chosen vertex; it agrees with~\cite[Proposition~2.7]{DEG}. Since $t_2=2,t_3=4$, induction gives $t_j$ even for all $j\ge2$. Hence $p_{n,2}$ and $p_{n,3}$ are even for $n\ge4$, except that the latter requires the direct boundary calculation $p_{4,3}=4t_1=4$.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+First suppose $n\ge4$. For $r=0,1$ or $r\ge4$, the group $\Sym_r$ has a complete mapping by the Hall--Paige theorem~\cite[Theorem~1.1]{ABCHK}. For $r=0,1$ the group is trivial. For $r\ge4$ it contains the four-group generated by the disjoint transpositions $(0\ 1),(2\ 3)$, so its Sylow two-subgroups are noncyclic. Lemma~\ref{lem:good-even} supplies every rank transversal for these ranks.
+
+At ranks two and three, an even number of half diagrams is handled by the same lemma. This covers both partial Brauer ranks and all Brauer cases except the two odd-index families displayed above. In either odd-index family apply Lemma~\ref{lem:half}. Its cycles satisfy~\eqref{eq:cycle}, so Lemma~\ref{lem:signed} gives the sign-quotient transversal. At rank two the sign map is an isomorphism; at rank three apply Lemma~\ref{lem:lift}. Equation~\eqref{eq:rees} now gives rank-preserving transversals in every rank. Their union proves existence and the assertions about principal factors and rank ideals.
+
+For $n=1$, $\B_1$ is a singleton and $\PB_1$ is a two-element semilattice. In both, squaring is the identity, so $\alpha=\mathrm{id}$ is complete.
+
+For $n=2,3$, units in either monoid form $\Sym_n$. In any finite monoid, nonunits form an ideal $J$. If $\alpha$ is complete and $\theta(x)=x\alpha(x)$, then $\theta(J)\subseteq J$, hence equality by injectivity and finiteness. Therefore $\theta$ preserves units, and a unit $u$ must have $\alpha(u)$ a unit. Cardinality then shows $\alpha$ restricts to a complete mapping of the unit group. But in $\Sym_2$ and $\Sym_3$ the product of the signs of all elements is $-1$. A complete mapping would give
+\[
+ -1=\prod_g\sgn(\theta(g))=
+ \left(\prod_g\sgn(g)\right)\left(\prod_g\sgn(\alpha(g))\right)=1,
+\]
+a contradiction. This excludes exactly degrees two and three.
+
+For the remaining proper factors at $n\le3$, the Brauer ranks are $0$ at $n=2$ and $1$ at $n=3$; their groups are trivial. In the partial Brauer case every proper rank is $0$ or $1$, except $(n,r)=(3,2)$. Trivial groups are handled by Lemma~\ref{lem:good-even}, in all these degrees, including the rank-zero factor at $n=1$.
+
+For the exception, the three rank-two half diagrams of $\PB_3$ each have two through vertices and one singleton. Distinct through sets cannot transport: a vertex through only on one side is isolated in the overlay. The sandwich matrix is therefore the three-by-three identity over $\Sym_2$, and the factor is the Brandt semigroup $B(\Sym_2,3)$. Its 18 nonzero triples include nine of negative sign. If a complete mapping existed, it and its product map would permute the nonzero triples; every selected sandwich entry is identity. Multiplying the signs of all selected products would give $-1=(-1)^2=1$, a contradiction. This is Dong's obstruction~\cite[Proposition~6.2]{Dong}.
+
+Finally apply Lemma~\ref{lem:filtration} to each nonempty $I_q$. A complete mapping restricts to a transversal in each included rank, hence gives a complete mapping of that rank's principal factor after adjoining zero. Conversely the rankwise transversals unite to give one on $I_q$. The failing ranks are only the unit rank for $n=2,3$ and, in $\PB_3$, rank two. This proves the ideal criteria in assertion~3 and completes the proof.
+\end{proof}
+
+\begin{corollary}[Rank constraints on the two permutations]\label{cor:cycles}
+For every complete mapping $\alpha$ of a Brauer or partial Brauer monoid, or of a nonempty rank ideal, $\alpha$, $\theta:x\mapsto x\alpha(x)$ and $\alpha^{-1}\theta$ preserve rank. Each cycle is contained in one rank class. Conversely any choice of rank-preserving transversals in the included rank classes unites to a complete mapping.
+\end{corollary}
+\begin{proof}
+Lemma~\ref{lem:filtration} proves the first two assertions; inverses and compositions of rank-preserving permutations preserve rank. The final assertion follows because the rank classes are disjoint and each selected product stays in its class.
+\end{proof}
+
+\begin{corollary}[Identity sandwich matrices]\label{cor:brandt}
+For $r=2,3$ and $m\ge1$, the Brandt semigroup $B(\Sym_r,m)$, with $m$-by-$m$ identity sandwich matrix, has a complete mapping if and only if $m$ is even.
+\end{corollary}
+\begin{proof}
+Even $m$ follows from Lemma~\ref{lem:good-even}, a case of~\cite[Corollary~7.6]{ABCHK}. For odd $m$, the number of negative-sign nonzero triples is $m^2 r!/2$, which is odd for $r=2,3$. Every nonzero selected product uses an identity sandwich entry. The sign-product contradiction used for $B(\Sym_2,3)$ applies unchanged.
+\end{proof}
+
+\begin{corollary}[All mappings of the minimal rank factors]\label{cor:enumeration}
+Let $J$ be the minimal rank class of $\B_n$, or the rank-zero class of $\PB_n$. If there are $m$ half diagrams, then $J$ and its factor with an additional zero each have exactly $(m!)^{2m}$ complete mappings.
+\end{corollary}
+\begin{proof}
+The minimal Brauer rank is zero for even $n$, one for odd $n$. Its symmetric group is trivial, and any two half diagrams transport by Lemma~\ref{lem:overlay}. The same holds in partial Brauer rank zero. Thus $J$ is the rectangular band on $I\times I$, with $(i,d)(j,e)=(i,e)$ and $|I|=m$.
+For a complete mapping $\alpha(i,d)=(a(i,d),b(i,d))$, product bijectivity says exactly that $b(i,d)=\tau_i(d)$ for a permutation $\tau_i$ of $I$, independently for each $i$. Given these $m$ permutations, multiplier bijectivity says exactly that
+\[
+ \alpha(i,d)=(\sigma_{\tau_i(d)}(i),\tau_i(d))
+\]
+for a permutation $\sigma_v$ of $I$ for each $v\in I$. These two families determine and are recovered uniquely from $\alpha$, giving $(m!)^m(m!)^m$ mappings. An additional zero is necessarily fixed and changes no count.
+\end{proof}
+
+\section{Coverage and verification}
+All numbered problems below are in~\cite[Section~15, pp.~59--61]{ABCHK}. They are questions, not assertions of the numerical answers. ``Reproved'' records a proof here of an already answered question; it is not a priority claim.
+\begingroup\small
+\begin{longtable}{@{}p{.39\textwidth}p{.55\textwidth}@{}}
+\toprule Source item & Coverage\\\midrule\endhead
+15.11, whole-monoid existence & Answered: yes exactly for $n=1$ or $n\ge4$, no for $n=2,3$. Reproved; prior proof Dong, September 2026, Theorem~1.1.\\
+15.11, all proper principal factors & Answered: yes except partial Brauer rank two at $n=3$. Reproved; prior proof Dong, September 2026, Theorem~1.1 and Proposition~6.2.\\
+15.11, individual mappings & Partial answer: all mappings of the minimal Brauer and rank-zero partial Brauer factors, Corollary~\ref{cor:enumeration}. Higher-rank enumeration is not covered.\\
+Rank ideals (not separately posed) & Proved: complete existence classification, Theorem~\ref{thm:main}(3), a consequence of Dong's factor theorem and Lemma~\ref{lem:filtration}.\\
+15.1, matrix monoids & Not covered; the proof uses pairing diagrams rather than matrix ranks over fields.\\
+15.2, infinite semigroups & Not covered; the rank-filtration argument uses finiteness.\\
+15.3, endomorphism monoids & Not covered.\\
+15.4, resolutions into disjoint transversals & Not covered; a single transversal is constructed.\\
+15.5, orthodox semigroups & Not covered; no assertion about an ordered product of all elements is used.\\
+15.6, cycles of the two permutations & Partial answer: the rank constraint in Corollary~\ref{cor:cycles} is a reproved consequence of Proposition~3.1 of Ara\'ujo et al. Full cycle classification is not covered.\\
+15.7, orthogonal semigroup operations & Not covered.\\
+15.8, $k$-complete mappings & Only $k=1$ in the diagram families; general $k$ is not covered.\\
+15.9, sandwich-matrix obstruction & Partial answer: the signed-cycle sufficient condition, Lemma~\ref{lem:signed} (Dong, Lemma~4.4), and the exact identity-matrix subcase, Corollary~\ref{cor:brandt}. Arbitrary groups and matrices are not covered.\\
+15.10, decision complexity & Not covered; explicit constructions do not classify decision complexity.\\
+15.12, simultaneous operations & Not covered.\\
+15.13, cryptographic constructions & Not covered; no security property is deduced.\\
+Theorem 8.5, partition monoids & Prior theorem of Ara\'ujo et al.; cited for comparison, not reproved.\\\bottomrule
+\end{longtable}\endgroup
+
+The proof above is a written argument; the explicit finite checks use exact integers and permutations. The accompanying \texttt{verify.py} checks all subset pairings at ranks two and three for $k=0,1,2,3$; telephone-number parity through complement size 40; binomial parity for degrees 4--40; and all 72 cases of the three-element sign-fibre lifting calculation. It also constructs and checks both bijections on every nonzero triple of the rank-two and rank-three factors of $\B_4,\B_5$ where those ranks occur, the odd-index factors $(n,r)=(6,2),(7,3)$, and the rank-two and rank-three factors of $\PB_4,\PB_5$. Each of these 76,856 selected products is also checked by independent three-row exterior connectivity. These finite computations illustrate the lemmas, while their quantified proofs give the all-degree result.
+
+The following pinned Lean files specify the formal scope. The common revision is \texttt{a89e0fb9ba0f9002502ec8125455c2c2a9281443}. All declaration names below are relative to the namespace named by their file.
+\begin{itemize}
+\item \leanfile{AraujoBrauerCompleteMapping}{\texttt{AraujoBrauerCompleteMapping.lean}}:\par
+\texttt{result} proves the positive-degree existence equivalences for both literal diagram monoids, including existence of their source monoid structures. It does not enumerate complete mappings.
+\item \leanfile{AraujoBrauerSourceMonoids}{\texttt{AraujoBrauerSourceMonoids.lean}} and \leanfile{AraujoBrauerCoordinates}{\texttt{AraujoBrauerCoordinates.lean}}:\par
+\texttt{partitionProduct\_assoc} proves associativity. The declaration \texttt{source\_monoids\_exist} supplies both source structures. The declaration \texttt{coordinate\_product\_preserving} connects rank coordinates to the partition product.
+\item \leanfile{AraujoBrauerSubsetPairing}{\texttt{AraujoBrauerSubsetPairing.lean}}:\par
+\texttt{rank\_two\_subset\_pairing} and \texttt{rank\_three\_subset\_pairing} give the two infinite subset families.
+\item \leanfile{AraujoBrauerHalfTriangles}{\texttt{AraujoBrauerHalfTriangles.lean}} and \leanfile{AraujoBrauerOverlayTransport}{\texttt{AraujoBrauerOverlayTransport.lean}}:\par
+\texttt{half\_diagram\_supported\_triangle\_structure}, \texttt{rank\_two\_signed\_half\_cycles} and \texttt{rank\_three\_signed\_half\_cycles} give the half-diagram cycles and their signs.
+\item \leanfile{AraujoSignedFactorLifting}{\texttt{AraujoSignedFactorLifting.lean}}:\par
+\texttt{rank\_two\_signed\_factor} and \texttt{rank\_three\_signed\_factor} yield transversals for the actual sandwich matrices in those infinite families.
+\end{itemize}
+The rank-filtration lemma, the full rank-ideal classification, the identity-sandwich corollary and the enumeration corollary have written proofs here. The declaration \texttt{result} states the whole-monoid equivalences, not those additional statements. The finite ranges listed above refer only to the Python checks. Additional checks construct a transversal for every occurring rank-zero or rank-one class in degrees one through three, verify the exceptional 18-element factor's sandwich support and sign count, and enumerate all 16 complete mappings of the two-by-two rectangular band.
+
+\begin{thebibliography}{9}
+\bibitem{ABCHK} J. Ara\'ujo, W. Bentz, P. J. Cameron, K. Hendrey and M. Kinyon, \emph{Complete Mappings of Semigroups}, arXiv:2608.25092v1 (25 August 2026), especially Theorems~1.1 and~4.4, Lemma~6.3, and Problem~15.11, p.~61. \url{https://arxiv.org/abs/2608.25092v1}.
+\bibitem{Dong} H. Dong, \emph{Complete mappings of the Brauer and partial Brauer monoids}, September 2026; version~2, October 2026, Theorem~1.1, Lemma~4.4 and Proposition~6.2. \href{https://github.com/Horace-Maxwell/ai4math-results/blob/1342597dde7e3d424c88f0524dc2e6347670e6ad/papers/brauer-complete-mappings/note.pdf}{September text}; \href{https://github.com/Horace-Maxwell/ai4math-results/blob/a9c15a2d3bd9974a9bde05ca278fdcc2e28d8f5a/papers/brauer-complete-mappings/note.pdf}{October version~2}. Archival collections: \href{https://doi.org/10.5281/zenodo.22981669}{September}, \href{https://doi.org/10.5281/zenodo.23200924}{October}.
+\bibitem{EMRT} J. East, J. D. Mitchell, N. Ru\v skuc and M. Torpey, \emph{Congruence lattices of finite diagram monoids}, Advances in Mathematics \textbf{333} (2018), 931--1003. \href{https://doi.org/10.1016/j.aim.2018.05.016}{doi:10.1016/j.aim.2018.05.016}. Author version: \url{https://arxiv.org/abs/1709.00142v2}.
+\bibitem{DEG} I. Dolinka, J. East and R. D. Gray, \emph{Motzkin monoids and partial Brauer monoids}, Journal of Algebra \textbf{471} (2017), 251--298. \href{https://doi.org/10.1016/j.jalgebra.2016.09.018}{doi:10.1016/j.jalgebra.2016.09.018}. Author version: \url{https://arxiv.org/abs/1512.02279v2}.
+\end{thebibliography}
+\end{document}

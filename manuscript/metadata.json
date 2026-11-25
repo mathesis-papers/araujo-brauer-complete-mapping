@@ -1,0 +1,77 @@
+{
+  "id": "araujo-brauer-complete-mapping",
+  "revision": 2,
+  "problem_ids": [
+    "araujo-brauer-complete-mapping"
+  ],
+  "topic": "Existence of complete mappings of Brauer and partial Brauer monoids",
+  "title": "Rank-ideal consequences of Dong's solution to the Brauer complete-mapping problem of Araújo, Bentz, Cameron, Hendrey and Kinyon",
+  "creators": [
+    {
+      "name": "Ma, Haobo",
+      "affiliation": "ChronoAI Pte Ltd, Singapore"
+    },
+    {
+      "name": "Zhang, Wenlin",
+      "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"
+    }
+  ],
+  "abstract": "We give a rank-ideal consequence and a rankwise proof of Horace Dong's September 2026 solution (Theorem 1.1; version 2, October 2026) to Araújo, Bentz, Cameron, Hendrey and Kinyon's Complete Mappings of Semigroups, arXiv:2608.25092v1, Section 15, Problem 15.11, printed page 61: the Brauer and partial Brauer monoids of positive degree n admit complete mappings exactly when n=1 or n>=4. Every proper Brauer principal factor admits one; the sole partial Brauer exception is the rank-two factor of PB_3, as Dong also proved. We derive the exact existence criterion for every nonempty rank ideal, including degrees two and three. The proof uses adjacent-subset pairings, signed sandwich transversals and rank preservation. Existence does not enumerate individual complete mappings.",
+  "summary": "A rankwise exposition of Dong's existence theorem, with complete rank-ideal criteria, rank constraints, an identity-sandwich criterion, and a parametrization of minimal-factor mappings.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/a89e0fb9ba0f9002502ec8125455c2c2a9281443/D5/S3/Combinatorics/PerfectMatchings/AraujoBrauerCompleteMapping.lean",
+  "posing_source": {
+    "url": "https://arxiv.org/abs/2608.25092v1",
+    "locator": "Section 15, Problem 15.11, printed page 61",
+    "scope": "All positive-degree whole monoids and all proper principal factors; minimal-factor enumeration"
+  },
+  "verification": {
+    "written_proof": "Whole-monoid classification, all proper factors, full rank-ideal criteria, rank preservation, identity-sandwich criterion, minimal-factor parametrization",
+    "lean_declaration": "D5.S3.Combinatorics.PerfectMatchings.AraujoBrauerCompleteMapping.result",
+    "source_revision": "a89e0fb9ba0f9002502ec8125455c2c2a9281443",
+    "finite_checks": "verify.py: original 1928 subsets, parity through degree 40, 72 S3 sign-fibre cases, 76856 factor products, counts through degree four; also nine small rank-zero/rank-one classes, all 324 PB_3 rank-two products, eight identity-sandwich cases, and all 24 permutations of the two-by-two rectangular band (16 complete mappings)",
+    "lean_scope": "The declaration result states whole-monoid equivalences and existence of the two source monoid structures; it does not state the rank-ideal or enumeration corollaries"
+  },
+  "coverage": [
+    {
+      "item": "Problem 15.11, whole-monoid existence",
+      "status": "Answered: yes for n=1 or n>=4; no for n=2,3; reproved, prior proof Dong, 2026"
+    },
+    {
+      "item": "Problem 15.11, all proper principal factors",
+      "status": "Answered: yes except PB_3 rank two; reproved, prior proof Dong, 2026"
+    },
+    {
+      "item": "Nonempty rank ideals, all positive degrees",
+      "status": "Not separately posed; proved consequence",
+      "statement": "For 0<=q<=n and nonempty I_q, Brauer: n not in {2,3} or q<n; partial Brauer: n not in {2,3} or q<=1"
+    },
+    {
+      "item": "Problem 15.6, rank constraints on cycles",
+      "status": "Partial answer; reproved consequence of Araújo et al., Proposition 3.1"
+    },
+    {
+      "item": "Problem 15.9, signed sandwich matrices",
+      "status": "Partial answer; Dong's signed-cycle sufficient condition and exact criterion for identity sandwich matrices over S_2,S_3"
+    },
+    {
+      "item": "Problem 15.11, individual mappings of minimal factors",
+      "status": "Partial answer; full parametrization and (m!)^(2m) count"
+    },
+    {
+      "item": "Higher-rank enumeration, other Section 15 problems",
+      "status": "Not covered except the explicitly stated subcases"
+    }
+  ],
+  "prior_work": {
+    "author": "Horace Dong",
+    "first_release_date": "2026-09-26",
+    "first_release_doi": "10.5281/zenodo.22981669",
+    "first_release_source": "https://github.com/Horace-Maxwell/ai4math-results/blob/1342597dde7e3d424c88f0524dc2e6347670e6ad/papers/brauer-complete-mappings/note.pdf",
+    "corrected_version_date": "2026-10-07",
+    "corrected_version_doi": "10.5281/zenodo.23200924",
+    "corrected_version_source": "https://github.com/Horace-Maxwell/ai4math-results/blob/a9c15a2d3bd9974a9bde05ca278fdcc2e28d8f5a/papers/brauer-complete-mappings/note.pdf",
+    "locators": "Theorem 1.1, Lemma 4.4, Proposition 6.2",
+    "relationship": "Alternative rankwise proof and consequences of the earlier existence classification; no priority assertion"
+  }
+}
